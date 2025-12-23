@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JTI Tech Hub</title>
+  <title>TechHub Invokasi</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <script src="/_sdk/element_sdk.js"></script>
@@ -12,55 +12,55 @@
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
     }
-    
+
     .hero-bg {
       background: linear-gradient(135deg, rgba(74, 144, 226, 0.85) 0%, rgba(80, 227, 194, 0.75) 100%),
                   url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="%234A90E2"/><rect width="100" height="100" fill="url(%23grid)"/><circle cx="20" cy="30" r="15" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="70" r="20" fill="rgba(80,227,194,0.3)"/><circle cx="60" cy="20" r="8" fill="rgba(255,255,255,0.15)"/></svg>');
       background-size: cover;
       background-position: center;
     }
-    
+
     .card-shadow {
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
-    
+
     .btn-primary {
       background-color: #4A90E2;
       transition: all 0.2s ease;
     }
-    
+
     .btn-primary:hover {
       background-color: #3a7bc8;
       transform: translateY(-1px);
     }
-    
+
     .btn-secondary {
       background-color: #50E3C2;
       transition: all 0.2s ease;
     }
-    
+
     .btn-secondary:hover {
       background-color: #3dd4b0;
       transform: translateY(-1px);
     }
-    
+
     .menu-icon:hover {
       opacity: 0.8;
     }
-    
+
     .card-hover {
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    
+
     .card-hover:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     }
-    
+
     .social-icon {
       transition: transform 0.2s ease;
     }
-    
+
     .social-icon:hover {
       transform: scale(1.15);
     }
@@ -242,7 +242,7 @@
       font_family: 'Inter',
       font_size: 14
     };
-    
+
     async function onConfigChange(config) {
       const logoEl = document.getElementById('logo-text');
       const heroTitleEl = document.getElementById('hero-title');
@@ -253,7 +253,7 @@
       const projectsTitleEl = document.getElementById('projects-section-title');
       const footerEmailEl = document.getElementById('footer-email');
       const footerCopyrightEl = document.getElementById('footer-copyright');
-      
+
       if (logoEl) logoEl.textContent = config.logo_text || defaultConfig.logo_text;
       if (heroTitleEl) heroTitleEl.textContent = config.hero_title || defaultConfig.hero_title;
       if (heroSubtitleEl) heroSubtitleEl.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
@@ -263,42 +263,42 @@
       if (projectsTitleEl) projectsTitleEl.textContent = config.projects_title || defaultConfig.projects_title;
       if (footerEmailEl) footerEmailEl.textContent = config.footer_email || defaultConfig.footer_email;
       if (footerCopyrightEl) footerCopyrightEl.textContent = config.footer_copyright || defaultConfig.footer_copyright;
-      
+
       const fontFamily = config.font_family || defaultConfig.font_family;
       document.body.style.fontFamily = `${fontFamily}, Inter, sans-serif`;
-      
+
       const baseSize = config.font_size || defaultConfig.font_size;
       if (heroTitleEl) heroTitleEl.style.fontSize = `${baseSize * 1.7}px`;
       if (heroSubtitleEl) heroSubtitleEl.style.fontSize = `${baseSize}px`;
-      
+
       const primaryColor = config.primary_color || defaultConfig.primary_color;
       const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
       const textColor = config.text_color || defaultConfig.text_color;
       const mutedColor = config.muted_color || defaultConfig.muted_color;
       const bgColor = config.background_color || defaultConfig.background_color;
-      
+
       const header = document.querySelector('header');
       if (header) header.style.backgroundColor = primaryColor;
-      
+
       const primaryBtns = document.querySelectorAll('.btn-primary');
       primaryBtns.forEach(btn => btn.style.backgroundColor = primaryColor);
-      
+
       const secondaryBtns = document.querySelectorAll('.btn-secondary');
       secondaryBtns.forEach(btn => btn.style.backgroundColor = secondaryColor);
-      
+
       const socialIcons = document.querySelectorAll('.social-icon svg');
       socialIcons.forEach(icon => icon.setAttribute('fill', primaryColor));
-      
+
       const textElements = document.querySelectorAll('[class*="text-[#333333]"]');
       textElements.forEach(el => el.style.color = textColor);
-      
+
       const mutedElements = document.querySelectorAll('[class*="text-[#666666]"]');
       mutedElements.forEach(el => el.style.color = mutedColor);
-      
+
       const mainContainer = document.querySelector('.max-w-\\[360px\\]');
       if (mainContainer) mainContainer.style.backgroundColor = bgColor;
     }
-    
+
     function mapToCapabilities(config) {
       return {
         recolorables: [
@@ -355,7 +355,7 @@
         }
       };
     }
-    
+
     function mapToEditPanelValues(config) {
       return new Map([
         ['logo_text', config.logo_text || defaultConfig.logo_text],
@@ -369,7 +369,7 @@
         ['footer_copyright', config.footer_copyright || defaultConfig.footer_copyright]
       ]);
     }
-    
+
     if (window.elementSdk) {
       window.elementSdk.init({
         defaultConfig,
